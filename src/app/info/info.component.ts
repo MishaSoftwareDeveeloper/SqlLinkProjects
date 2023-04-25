@@ -25,7 +25,6 @@ export class InfoComponent {
   ngOnInit(){
     this.personalDetails = this.auth.personalDetails
     this.appServ.showLoader = true;
-    debugger
     if(this.personalDetails){
       this.projectSubscription = this.api.getProjects(this.personalDetails.Id).subscribe((data:any)=>{
         if(data && data.length > 0){
