@@ -1,27 +1,27 @@
-# SqlLinkPages
+Run Instructions. <br />
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
+1)Download project <br />
+2)Open ExcAutocomplete directory and run "npm install" using comand line or PowerShell -> node modules installed <br />
+3)Open ExcAutocomplete.sln with Visual Studio <br />
+3)Set as StartUp project "WebApi" and run-> browser was opened <br />
+4)Copy url path for example: http://localhost:56902/ <br />
+5)Go to Client/proxy.conf.json and replace your url with old url <br />
+(This very important because angularjs run on port 4200 and api run on different port -> "CorsPlatform") <br />
+6)Open comand line/ powershell in Client directory and run "npm start" -> project and proxy was started <br />
+7)Open browser and paste  http://localhost:4200 -> project run <br />
 
-## Development server
+Run Instructions. <br />
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1)Download project <br />
+2)Open SqlLinkProjects directory and run "npm install" using comand line or PowerShell -> node modules installed <br />
+3)Open WebApi.sln with Visual Studio <br />
+4)Open WebConfig in WebApi and open AppConfig in DAL and change user connection properties in the connection string <br />
+5)In the solution folder there is SqlQueries file. Run all queries in your DB <br />
+6)Set as StartUp project "WebApi" and run-> browser was opened <br />
+7)Copy url path for example: http://localhost:56902/ <br />
+8)Go to src/proxy.conf.json and replace your url with old url <br />
+(This very important because angularjs run on port 4200 and api run on different port -> "CorsPlatform") <br />
+9)Open comand line/ powershell in Client directory and run "npm start" -> project and proxy was started <br />
+10)Open browser and paste  http://localhost:4200 -> project run <br />
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+If something is not clear please call me.

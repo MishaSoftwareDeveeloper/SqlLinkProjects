@@ -1,0 +1,59 @@
+<div class="info">
+    <div *ngIf="personalDetails" class="personal-details">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title-group>
+                    <img mat-card-md-image [src]="personalDetails.avatar">
+                    <mat-card-title>Name: {{personalDetails.name}}</mat-card-title>
+                    <mat-card-subtitle>Team: {{personalDetails.Team}}</mat-card-subtitle>
+                    <mat-card-subtitle>Joined: {{personalDetails.joinedAt | date: 'dd/MM/yyyy' }}</mat-card-subtitle>
+                </mat-card-title-group>
+            </mat-card-header>
+        </mat-card>
+
+    </div>
+    <div  class="data">
+        <mat-form-field class="filter" appearance="fill">
+            <mat-label>Search</mat-label>
+            <input matInput placeholder="please enter a value" (input)="applyFilter($event)">
+        </mat-form-field>
+        <mat-card>
+            <mat-card-subtitle>Success dedline projects: {{getPersentage()}}%</mat-card-subtitle>
+            <mat-card-subtitle>Average score: {{getAverageScore()}}</mat-card-subtitle>
+        </mat-card>
+        <table mat-table [dataSource]="dataSource"  matSort >
+            <ng-container  matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+                  Name
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+            <ng-container  matColumnDef="score">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by score">
+                  Score
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+            </ng-container>
+            <ng-container  matColumnDef="durationInDays">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by durationInDays">
+                  Duration in days
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.durationInDays}} </td>
+            </ng-container>
+            <ng-container  matColumnDef="bugsCount">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by bugsCount">
+                  Bugs
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.bugsCount}} </td>
+            </ng-container>
+            <ng-container  matColumnDef="madeDadeline">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by madeDadeline">
+                  Made date line
+                </th>
+                <td mat-cell *matCellDef="let element"> {{getMadeDateLine(element.madeDadeline)}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'red':scoreLess(row.score), 'green': scoreMore(row.score)}"></tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+.login-form{
+    margin:10% auto auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:400px;
+    height: auto;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: whitesmoke ;
+    .full-width{
+        width:100%;
+    }
+    .submit-btn{
+        width:100%
+    }
+    
+}

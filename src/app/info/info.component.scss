@@ -1,0 +1,16 @@
+.info{
+    .red{
+        background-color:rgba(255,0,0,0.5);
+    }
+    .green{
+        background-color: rgba(0,255,0,0.5);
+    }
+
+    th.mat-sort-header-sorted {
+        color: black;
+      }
+    .filter{
+        margin: 10px 0;
+        width:100%;
+    }
+}
